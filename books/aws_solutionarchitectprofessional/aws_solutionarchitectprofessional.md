@@ -1515,14 +1515,6 @@ Lambdaオーソライザーは[こちら](API Gateway の Lambda オーソライ
 
 
 
-Network Firewallについては[こちら](AWS Network Firewallのデプロイモデル | Amazon Web Services ブログ https://aws.amazon.com/jp/blogs/news/networking-and-content-delivery-deployment-models-for-aws-network-firewall/)を一読しておくとよい。
-
-> Network Firewallを正しく動作させるためには、トラフィックをNetwork Firewallのエンドポイントに対称的にルーティングする必要があります。このエンドポイントは、AWS PrivateLink のInterface型エンドポイントに似ています。主な違いは、ルートテーブルのターゲットになることができるということです。Network Firewallのエンドポイントは、専用のサブネットにデプロイします。このサブネットをNetwork Firewall サブネットまたは単にFirewallサブネットと呼びます。ユースケースと展開モデルに応じて、Firewallサブネットはパブリックまたはプライベートのいずれかになります。高可用性（HA）およびマルチAZ展開の場合、アベイラビリティーゾーン（AZ）ごとにサブネットを割り当てます。ベストプラクティスとして、Firewallサブネットには他のサービスをデプロイしないでください。Firewall サブネット内にあるサービスに関連したトラフィックは、Network Firewallを通して検査することができません。
->
-> ファイアウォールエンドポイントは、AWSコンソール上のVPCルートテーブルのターゲット選択画面においてvpce-idで表示されます。ファイアウォールエンドポイントはAWS Gateway Load Balancerを利用しているため、エンドポイントのElastic Network Interface（ENI）は「gateway_load_balancer_endpoint」タイプとなります。Network Firewallでネットワークトラフィックを検査するには、VPCのルートテーブルを適切に設定してトラフィックをファイアウォールエンドポイントに転送する必要があります。図1では、VPC Ingress Routing機能を使用して、ワークロードがあるサブネットとInternet Gateway（IGW）の間のパスにファイアウォールエンドポイントを挿入しています。この設定については、こちらの記事もご覧ください。
-
-
-
 #### SSHの脆弱性による不正アクセス対策
 
 - そもそも素の?SSHでのアクセスをやめる
@@ -1596,37 +1588,6 @@ Network Firewallについては[こちら](AWS Network Firewallのデプロイ�
 >     ]
 > }
 > ```
-
-
-
-##### IMDSとは
-
-- Instance Metadata Serviceの略
-
-- v1とv2がある
-
-- [こちら](https://blog.serverworks.co.jp/tech/2019/11/27/imdsv2/)参照
-
-- > - デフォルトではIMDSv1とIMDSv2の両方が使える状態
-  >   - v1を無効化、またはv1とv2の両方を無効化することもできる
-  > - IMDSv2ではメタデータへのアクセスの前に**セッショントークン**を取得する必要がある
-  > - セッショントークンの取得はメタデータへの**HTTP PUT**リクエストで行う
-  > - これにより以下の攻撃のリスクを下げられる
-  >   - **設定に穴のあるWAF経由**での、メタデータを利用した攻撃
-  >   - **設定に穴のあるリバースプロキシ経由**での、メタデータを利用した攻撃
-  >   - **SSRF脆弱性を突いた**、メタデータを利用した攻撃
-  >   - **設定に穴のあるL3ファイアウォール又はNAT経由**での、メタデータを利用した攻撃
-
-  
-
-
-
-##### そもそもインスタンスメタデータとは
-
-[こちら](https://qiita.com/miyuki_samitani/items/be36df3ff41da4e3016a#:~:text=EC2%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%86%85%E3%81%8B%E3%82%89,%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E5%87%BA%E6%9D%A5%E3%81%BE%E3%81%99%E3%80%82)参照
-
-> EC2のインスタンス内からのみアクセスが可能なインスタンスに関するデータです。
-> アクセスできるユーザであれば誰でも確認することが出来ます。
 
 
 
