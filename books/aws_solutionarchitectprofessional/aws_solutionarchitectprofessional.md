@@ -1,4 +1,12 @@
-# AWS Solution Architect Professional 一発合格までの道のり
+---
+
+title: "AWS Solution Architect Professionalに一発合格する方法"
+summary: "AWS Solution Architect Professionalに確実に一発合格する方法、教えます。"
+topics: ["AWS", "AWS Solution Architect Professional", "資格"] # トピック（5つまで）
+published: true # falseだと下書き
+price: 1000 # 有料の場合200〜5000
+
+---
 
 
 
