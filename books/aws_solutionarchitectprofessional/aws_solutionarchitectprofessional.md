@@ -243,11 +243,8 @@ price: 1000
   
   
   
-- 各サービスがどこにあるかも認識しておくと良い。[こちら](https://qiita.com/saitotak/items/d2ede050e7a2224da46d)を参照。
-
-  >[![Image](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F130874%2F1a6cf2b2-163b-1e3f-b80c-f8ac5aaf7517.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=10561710f4078ca66deb8bf06b1e85aa)](https://camo.qiitausercontent.com/13b44eb3456b0fbb0b139b4a58f1e9c5b417d75a/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3133303837342f31613663663262322d313633622d316533662d623830632d6638616335616166373531372e706e67)
-
-
+  
+  
 
 ### EC2 Fleet
 
