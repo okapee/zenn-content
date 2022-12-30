@@ -150,7 +150,6 @@ price: 1000
   >
   > なお名前が紛らわしいですが、NATゲートウェイは[前述した狭義のNAT](https://qiita.com/c60evaporator/items/2f24d4796202e8b06a77#nat-1)ではなく、ポートを含めて1対多でグローバルIPとプライベートIPを変換する[NAPT](https://qiita.com/c60evaporator/items/2f24d4796202e8b06a77#napt)としての機能を果たします。
   > グローバルIPとプライベートIPを1対1変換する狭義のNATの役割を果たすのは「インターネットゲートウェイ」ですので、ご注意ください
-  >
   
   
   
@@ -1416,32 +1415,6 @@ SCPとOUの概念はざっくり把握すること。以下がおすすめ。
 
 
 
-### 耐障害性
-
-#### マイクロサービスのエラーやボトルネックの抽出
-
-X-Rayが最適。サービスマップで指定した期間のエラー、スロットリング、呼び出し平均時間を確認できる。個別のトレース情報へのドリルダウンも可能。監視対象のアクションが厳密に限定されていなくても、SDKのパッチ適用を使用することでサポートしている呼び出しやライブラリに対応できるので、AWSサービスの呼び出し、AWS外のAPI呼び出し、SQLリクエストなどのトレースをプログラムからX-Rayに送信して統計情報を確認できる。	
-
-
-
-#### EC2のリタイアについて
-
-- リタイアとは、[こちら]()に記載のあるとおり。
-
-  > リタイア通知とは、インスタンスをホストしている基盤のハードウェアで回復不可能な障害が検出されたときに通知されます。
-  > 予定されたリタイア日になると、インスタンスは AWS によって停止または削除されますので、対応は必須になります。
-
-- 対応としては対象インスタンスを停止して起動し直す。
-
-- 自動化する場合、
-  - **<u>EventBridgeのイベントルールでeventTypeCodeにAWS_EC2_PERSISTENT_INSTANCE_RETIREMENT_SCHEDULEDを設定する</u>**
-  - <u>**対象にSystem Manager AutomationのAWS-RestartEC2Instanceを指定する**</u>
-    - パラメーターのInput Transformerに{"Instances": "$.resources"}, {"InstanceId": <Instances>}を指定する
-  
-- ステートフルなアプリでは、EBSボリュームを保持しなければならないため、EC2インスタンスを停止、開始することで対応できる。AMIから起動できればよいので、Auto Scalingグループで必要数のインスタンスを保持する構成も考えられる。
-
-
-
 ### 運用管理、セキュリティ
 
 全体像は[こちら](https://pages.awscloud.com/rs/112-TZM-766/images/20210224_2th_ISV_DiveDeepSeminar_Security.pdf)を一読ください。
@@ -1495,31 +1468,6 @@ X-Rayが最適。サービスマップで指定した期間のエラー、スロ
 
 
 
-[BlackBelt](https://www.youtube.com/watch?v=UXSbh4Wsp7c)にも目を通しておくと良い。
-
-オンプレミスのLinuxサーバーとVPC内のEC2で共通のファイルシステムを使う場合において、オンプレからはデータ転送を暗号化する必要がある際には、
-
-- データの暗号化は amazon-efs-utils(EFSマウントヘルパー)をインストールして、マウントヘルパーコマンドに -o tls オプションをつけてマウントする
-  - この際、ファイルシステムIDを指定するので、名前解決ができている必要がある
-  - マウントヘルパーではIPアドレスの指定はできない
-  - efs-utils.confを調整する必要がある
-  
-    - 以下を[参照](https://dev.classmethod.jp/articles/efs-mount-helper/)。
-  
-    - > マウントヘルパーには、EFSのログ記録が組み込まれています。
-      >
-      > ```bash
-      > $ ll /var/log/amazon/efs
-      > total 4
-      > -rw-r--r--. 1 root root 921 Oct 25 02:27 mount.log
-      > ```
-      >
-      > なお、ログの出力先やサイズの指定は`/etc/amazon/efs/efs-utils.conf`で設定が可能です。 設定を確認してみると、ログの最大サイズが制限されているようなので、ログローテ等でケアする必要がなさそうです。
-
-
-
-
-
 #### GuardDuty
 
 [こちら](https://www.wafcharm.com/blog/amazon-guardduty-for-beginners/)参照。
@@ -1532,22 +1480,6 @@ X-Rayが最適。サービスマップで指定した期間のエラー、スロ
 > 4. 安価な課金制で、気兼ねなく利用できる
 >
 > つまり、AWS環境やAWSアカウントのセキュリティ全般の攻撃を検知してくれるソリューションがGuardDutyということなのです。
-
-
-
-##### GuardDutyでルートユーザーの認証が行われた際に通知する
-
-[こちら](https://dev.classmethod.jp/articles/guardduty-rootaccount/)を参照。
-
-> [GuardDutyを有効](https://dev.classmethod.jp/cloud/aws/guardduty-cfn-template-set-sns/)にし、ルートアカウントでAWSコンソールに接続します。GuardDutyコンソールをみると、「Policy:IAMUser/RootCredentialUsage」が作成されたことがわかります。
-
-> GuardDutyで検知すると、CloudWatch Eventsが発火するため、SNSで通知したり、LambdaでSlackに通知できます。
->
-> ルートアカウントの利用が認められた場合、どのような操作が行われたのか確認したくなるかと思います。CloudTrailログをS3に出力している場合は、Athenaで解析できます。まずは、Athenaのテーブルを作成します。CloudTrailコンソール＞イベント履歴＞"Amazon Athena で高度なクエリを実行します"を選択します。
-
-CloudTrailのログ集約と迅速な検索に対応するためには、ログを1つのアカウントに集約し、Athenaでデータのパーティションを分割するのがよい。
-
-CloudTrailのログ改ざんを検知するためには、整合性検証オプションを有効にする。
 
 
 
