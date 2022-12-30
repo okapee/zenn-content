@@ -663,43 +663,6 @@ Elastic Load Balancer。[こちら](https://dev.classmethod.jp/articles/elb-expl
 
 まずは[このあたり](https://dev.classmethod.jp/articles/aws-summit-online-2020-day2-track2-1315-1345-aws-storage/)を見て全体像を押さえる。
 
-> AWSのストレージサービスは複数ある
->
-> ![https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-1.png](https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-1.png)
->
-> ### データベースでのストレージ
->
-> - データファイル、トランザクションログファイル、アーカイブなど様々な物がある
->   - ファイルの種類ごとに求められるI/O性能が異なるので、適切なストレージが必要
->
-> ![https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-2-1.png](https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-2-1.png)
->
-> - EBSはSSDのgp2/io1、HDDのst1/sc1がある
->   - 一部ではEC2インスタンスストアもある
-> - ブロックストレージの選択はスライドのようなフローで選ぶと良い
->
-> ![https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-3-1.png](https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-3-1.png)
->
-> ### ファイルサーバー
->
-> - 接続したいプロトコルによりサービスが異なる
->
-> ![https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-4-2.png](https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-4-2.png)
->
-> - EFS
->   - 複数AZで冗長化
->   - PBクラスの容量保持可能
->   - NFSでアクセスを提供
->
-> ![https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-5-2.png](https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-5-2.png)
->
-> - Amazon FSx for Windows File Server
->   - Windows ファイルサーバー完全マネージドサービス
->   - SMB
->   - 3PBまで拡張可能
->
-> ![https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-6-2.png](https://d1tlzifd8jdoy4.cloudfront.net/wp-content/uploads/2020/09/Untitled-6-2.png)
-
 
 
 #### S3
@@ -1072,22 +1035,6 @@ IAMでhアクセス制御のための「ポリシー」という考え方があ�
 >
 > スタックインスタンスは、でテンプレートであるスタックセットが実際に展開されたスタックのことを指しているんでしょうか？
 > リファレンス(参照)なので、そのスタックへのパスみたいな概念とも捉えられます。そうだとすれば、スタックがなくてもパスは存在するという説明も納得できます。
-
-> ![スクリーンショット 2022-12-18 11.44.33](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-18 11.44.33.png)
->
-> ![スクリーンショット 2022-12-18 11.44.51](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-18 11.44.51.png)
->
-> ![スクリーンショット 2022-12-18 11.44.58](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-18 11.44.58.png)
->
-> ![スクリーンショット 2022-12-18 11.45.05](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-18 11.45.05.png)
->
-> ![スクリーンショット 2022-12-18 11.57.27](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-18 11.57.27.png)
->
-> ![スクリーンショット 2022-12-18 11.57.39](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-18 11.57.39.png)
->
-> ![スクリーンショット 2022-12-18 11.57.50](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-18 11.57.50.png)
-
-
 
 
 
