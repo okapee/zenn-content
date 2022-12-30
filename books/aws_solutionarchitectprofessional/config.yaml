@@ -4,4 +4,4 @@ topics: ["AWS", "AWS Solution Architect Professional", "資格"] # トピック�
 published: true # falseだと下書き
 price: 1000 # 有料の場合200〜5000
 chapters:
-  - aws_sap
+  - aws_solutionarchitectprofessional
