@@ -363,16 +363,6 @@ User-Agentなどのパケットの内容は**Flow Logsでは確認できない**
 
 [こちら](https://atbex.attokyo.co.jp/blog/detail/40/)が分かりやすい。
 
-基本的にはDirect Connectサービスの障害に備え、VPNを別途用意する。プライベートVIFでの速度遅延とパブリックVIFのインターネット経由でのアクセスが発生することを許容する必要がある。[公式](https://aws.amazon.com/jp/directconnect/faqs/)を参照。
-
-> **Q: 高可用性のために AWS Direct Connect への接続を発注するにはどうしたらよいですか?**
->
-> ユースケースに最適な回復モデルを決定するには、「[AWS Direct Connect の回復性に関する推奨事項](https://aws.amazon.com/jp/directconnect/resiliency-recommendation/)」ページで説明されている、回復性に関するベストプラクティスに従うことをお勧めします。回復モデルを選択した後、[AWS Direct Connect 回復ツールキット](https://docs.aws.amazon.com/directconnect/latest/UserGuide/resiliency_toolkit.html)により、冗長的な接続を注文するプロセスがガイドされます。さらに AWS では、回復ツールキットのフェイルオーバーテスト機能を使用して、稼働前に設定をテストすることも奨励しています。 
->
-> 専用の各 AWS Direct Connect 接続は、お客様のルーター上にあるポートと AWS Direct Connect デバイス間で、単一の専用接続として構成されています。冗長性が必要な場合は、2 番目の接続を確立することをお勧めします。同じ AWS Direct Connect ロケーションで複数のポートをリクエストすると、それらは冗長的な AWS 機器の上でプロビジョニングされます。 
->
-> これとは違い、バックアップ IPsec VPN 接続を設定済みの場合は、すべての VPC トラフィックが自動的にその VPN 接続にフェイルオーバーされます。パブリックのリソース (例: Simple Storage Service (Amazon S3)) との間のトラフィックは、インターネットを介してルーティングされます。バックアップの AWS Direct Connect リンクまたは IPsec VPN リンクがない場合は、Amazon VPC のトラフィックは障害発生時にドロップされます。パブリックのリソースとの双方向のトラフィックは、インターネットを介してルーティングされます。
-
 
 
 ##### Direct Connect Gateway
