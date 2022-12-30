@@ -2264,16 +2264,6 @@ AWS上で構築・展開したサービスを組織内で使える形にして�
 
 [こちら](AWS Service Catalogとは – Amazon Web Service(AWS)導入開発支援 https://www.acrovision.jp/service/aws/?p=1032#:~:text=AWS%20Service%20Catalog%E3%81%A8%E3%81%AF%E3%80%81%E7%B5%84%E7%B9%94%E3%81%A8%E3%81%97%E3%81%A6%E7%AE%A1%E7%90%86%E3%81%97%E3%81%A6,%E6%A9%9F%E8%83%BD%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)あたりを参考に。BlackBeltも参考になります。
 
-> ![スクリーンショット 2022-12-25 10.27.01](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.27.01.png)
->
-> ![スクリーンショット 2022-12-25 10.27.15](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.27.15.png)
->
-> ![スクリーンショット 2022-12-25 10.27.32](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.27.32.png)
->
-> ![スクリーンショット 2022-12-25 10.28.10](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.28.10.png)
->
-> ![スクリーンショット 2022-12-25 10.28.20](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.28.20.png)
-
 
 
 ### 移行
