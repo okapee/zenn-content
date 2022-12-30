@@ -624,8 +624,6 @@ Elastic Load Balancer。[こちら](https://dev.classmethod.jp/articles/elb-expl
     >
     > リクエスト数を制限することでシステムにかかる負荷を抑えたり、スパムメールの送信を防止するのに利用されます。
 
-- バックアップはオンデマンドバックアップというものがあり、AWS Backupの機能を使うと簡単にDailyなどでバックアップが取得可能。Restoreも簡単。詳しくは[こちら](https://dev.classmethod.jp/articles/aws-backup-dynamodb/)参照。
-
 - **DynamoDB Global Tablesはリージョンレベルでのレプリカテーブルを作成する機能。アプリケーションがあるリージョンのレプリカテーブルにデータを書き込むと、DynamoDB は書き込みを他の AWSリージョンのレプリカテーブルに自動的に伝播する。**
 
   - ゲームなどで、各リージョンでのランキング表示と全世界のランキング表示を同時に見せたいような場合、DynamoDBテーブルストリームを有効にしてレプリケーションする。これによりマルチマスターとなるので、書き込みは各リージョンで可能となる。
@@ -637,14 +635,6 @@ Elastic Load Balancer。[こちら](https://dev.classmethod.jp/articles/elb-expl
 ##### 大量のユーザーを認証し、データをログインユーザーに紐づくパーティションキーで保存する場合のベストプラクティス
 
 エンドユーザーの認証はユーザープールで行い、DynamoDBへのAPIリクエストはIDプールで行う構成。集中しづらい値をパーティションキーにすることでDynamoDBのパフォーマンスのベストプラクティスが実現できる。
-
-IAMユーザーを作成してARNをパーティションキーにすると、IAMユーザーの上限5,000とサインイン時にアクセスキー/シークレットアクセスキーが必要になり非現実的、IAMロールは上限が1,000で非現実的。
-
-Cognito IDプールで認証されたユーザー向けにDynamoDBへの読み取り権限ポリシーをアタッチしたIAMロールを設定し、**ユーザープールで管理しているUUIDをパーティションキー**に設定するとよい。
-
-※そもそもユーザープールとIDプールとは?
-
-ユーザープールは認証を、IDプールは認可を行う。両方ともにCognitoで可能。ユーザープールで認証を行った後にユーザープールトークンとIDプールトークンを交換し、そのトークンを持って各種サービスのアクセスを制御する。
 
 [参考](CognitoのユーザープールとIDプールの違いは？AWSの認証と認可を分かりやすく解説 | Ragate ブログ https://www.ragate.co.jp/blog/articles/112)
 
@@ -1342,34 +1332,6 @@ EventBridgeは[BlackBelt](https://www.youtube.com/watch?v=H7641kZMghg)を見て�
 ![スクリーンショット 2022-12-24 15.52.03](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.52.03.png)
 
 機能比較については[こちら](AWSのメッセージングサービス SQS、SNS、EventBridge の主な機能比較 - Qiita https://qiita.com/okubot55/items/1987bbcfab99a4da24fb)を参照。
-
-##### トピックポリシー
-
-公式[参照](https://docs.aws.amazon.com/ja_jp/sns/latest/dg/sns-access-policy-use-cases.html)。
-
-> ## トピックへの AWS アカウント アクセスの付与
->
-> Amazon SNS システムにトピックがあるとします。最も簡単なケースとして、特定のトピックアクション (発行など) へのアクセスを 1 つ以上の AWS アカウント に許可するとします。
->
-> これは、Amazon SNS API アクション `AddPermission` を使用して実行できます。これには、トピック、AWS アカウント ID リスト、アクションリスト、ラベルが必要ですが、トピックのアクセスコントロールポリシー内に新規ステートメントが自動的に作成されます。この場合、 Amazon SNS により新規ポリシーステートメントが自動的に作成されます。手動でポリシーを記述する必要はありません。ラベルと共に `RemovePermission` を呼び出すことによって、後日ポリシーステートメントを削除することができます。
->
-> 例えば、トピック arn:aws:sns:us-east-2:444455556666:MyTopic を対象に `AddPermission` を呼び出す場合 (AWS アカウント ID 1111-2222-3333、`Publish` アクション、ラベル `grant-1234-publish` を使用)、Amazon SNS は次のアクセスコントロールポリシーステートメントを作成して挿入します。
->
-> ```
-> {
->   "Statement": [{
->     "Sid": "grant-1234-publish",
->     "Effect": "Allow",
->     "Principal": {
->       "AWS": "111122223333"
->     },
->     "Action": ["sns:Publish"],
->     "Resource": "arn:aws:sns:us-east-2:444455556666:MyTopic"
->   }]
-> }
-> ```
->
-> 一度このステートメントが追加されてしまえば、AWS アカウント 1111-2222-3333 のユーザーはトピックへメッセージを発行することができます。
 
 
 
