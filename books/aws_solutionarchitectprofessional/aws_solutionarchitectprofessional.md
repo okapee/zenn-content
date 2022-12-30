@@ -1311,28 +1311,6 @@ SNSと比べるとEventBridgeが連携先が幅広く、1:Nで多くのサービ
 
 EventBridgeは[BlackBelt](https://www.youtube.com/watch?v=H7641kZMghg)を見ておくと良い。
 
-![スクリーンショット 2022-12-24 15.34.51](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.34.51.png)
-
-![スクリーンショット 2022-12-24 15.32.24](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.32.24.png)
-
-![スクリーンショット 2022-12-24 15.36.23](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.36.23.png)
-
-![スクリーンショット 2022-12-24 15.38.41](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.38.41.png)
-
-![スクリーンショット 2022-12-24 15.39.41](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.39.41.png)
-
-![スクリーンショット 2022-12-24 15.45.22](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.45.22.png)
-
-
-
-![スクリーンショット 2022-12-24 15.45.40](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.45.40.png)
-
-![スクリーンショット 2022-12-24 15.47.56](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.47.56.png)
-
-![スクリーンショット 2022-12-24 15.52.03](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 15.52.03.png)
-
-機能比較については[こちら](AWSのメッセージングサービス SQS、SNS、EventBridge の主な機能比較 - Qiita https://qiita.com/okubot55/items/1987bbcfab99a4da24fb)を参照。
-
 
 
 #### SQS
