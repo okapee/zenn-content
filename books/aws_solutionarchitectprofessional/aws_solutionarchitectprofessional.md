@@ -1859,42 +1859,6 @@ X-Rayが最適。サービスマップで指定した期間のエラー、スロ
 
 [BlackBelt](https://www.youtube.com/watch?v=UXSbh4Wsp7c)にも目を通しておくと良い。
 
-> ![スクリーンショット 2022-12-24 21.23.34](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.23.34.png)
->
-> ![スクリーンショット 2022-12-24 21.25.23](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.25.23.png)
->
-> ![スクリーンショット 2022-12-24 21.26.55](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.26.55.png)
->
-> ![スクリーンショット 2022-12-24 21.27.21](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.27.21.png)
->
-> ![スクリーンショット 2022-12-24 21.28.45](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.28.45.png)
->
-> ![スクリーンショット 2022-12-24 21.30.05](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.30.05.png)
->
-> ![スクリーンショット 2022-12-24 21.30.41](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.30.41.png)
->
-> ![スクリーンショット 2022-12-24 21.34.37](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.34.37.png)
->
-> ![スクリーンショット 2022-12-24 21.41.35](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.41.35.png)
->
-> ![スクリーンショット 2022-12-24 21.42.09](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.42.09.png)
->
-> ![スクリーンショット 2022-12-24 21.42.57](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.42.57.png)
->
-> ![スクリーンショット 2022-12-24 21.44.02](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.44.02.png)
->
-> ![スクリーンショット 2022-12-24 21.48.33](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.48.33.png)
->
-> ![スクリーンショット 2022-12-24 21.50.51](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.50.51.png)
->
-> ![スクリーンショット 2022-12-24 21.52.00](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.52.00.png)
->
-> ![スクリーンショット 2022-12-24 21.52.37](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.52.37.png)
->
-> ![スクリーンショット 2022-12-24 21.53.29](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-24 21.53.29.png)
-
-##### オンプレとクラウドのハイブリッド運用におけるEFSのセキュアな共有について
-
 オンプレミスのLinuxサーバーとVPC内のEC2で共通のファイルシステムを使う場合において、オンプレからはデータ転送を暗号化する必要がある際には、
 
 - データの暗号化は amazon-efs-utils(EFSマウントヘルパー)をインストールして、マウントヘルパーコマンドに -o tls オプションをつけてマウントする
@@ -2270,13 +2234,7 @@ AWS上で構築・展開したサービスを組織内で使える形にして�
 
 全体像は[BlackBelt](https://www.youtube.com/watch?v=KonZEchQXvg)にて。
 
-> ![スクリーンショット 2022-12-25 10.35.45](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.35.45.png)
->
-> ![スクリーンショット 2022-12-25 10.32.52](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.32.52.png)
->
-> ![スクリーンショット 2022-12-25 10.43.34](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.43.34.png)
->
-> ![スクリーンショット 2022-12-25 10.44.33](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.44.33.png)
+
 
 #### CART(AWS Cloud Adoption Readiness Tool)
 
@@ -2313,9 +2271,13 @@ Cloud Adoption Readiness Tool をそのまま日本語に訳すと、クラウ�
 
 オンプレミスのサーバーの設定や情報を自動収集するサービス。移行の判断や移行の計画を立てる際に役立つ。サーバーにエージェントをインストールして情報を収集するエージェント型とVMware向けのコネクタ型がある。
 
+
+
 #### CART
 
 AWS Cloud Adoption Readiness Toolの略。Webフォームで質問に答えるだけで移行準備に役立つレポートが提供される。
+
+
 
 #### DMS
 
@@ -2323,13 +2285,7 @@ Database Migration Service。名前のとおりデータベースの移行サー
 
 [BlackBelt](https://www.youtube.com/watch?v=Od83ySfrzGc)も軽く見ておくと良い。
 
-> ![スクリーンショット 2022-12-25 11.01.59](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.01.59.png)
->
-> ![スクリーンショット 2022-12-25 10.47.23](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.47.23.png)
->
-> ![スクリーンショット 2022-12-25 10.48.07](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 10.48.07.png)
->
-> ![スクリーンショット 2022-12-25 11.03.27](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.03.27.png)
+
 
 #### SCT
 
