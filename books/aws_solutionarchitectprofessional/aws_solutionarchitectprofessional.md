@@ -151,27 +151,6 @@ price: 1000
   > なお名前が紛らわしいですが、NATゲートウェイは[前述した狭義のNAT](https://qiita.com/c60evaporator/items/2f24d4796202e8b06a77#nat-1)ではなく、ポートを含めて1対多でグローバルIPとプライベートIPを変換する[NAPT](https://qiita.com/c60evaporator/items/2f24d4796202e8b06a77#napt)としての機能を果たします。
   > グローバルIPとプライベートIPを1対1変換する狭義のNATの役割を果たすのは「インターネットゲートウェイ」ですので、ご注意ください
   >
-  > ### Egress Only インターネットゲートウェイ
-  >
-  > IPv6専用のインターネットゲートウェイで、**外向きの通信のみを許可**する(内向きは許可しない)という意味で、IPv4におけるNATゲートウェイと同様の役割を果たします("Egress"とは「出力」を表します)
-  >
-  > ### エンドポイント (VPCエンドポイント)
-  >
-  > エンドポイントは、VPC内のインスタンスと**VPC外のAWSサービス**とを**インターネットを経由しない接続**(プライベート接続)で通信できるようにする機能です。
-  >
-  > VPCと他のAWSサービスとの接続はインターネットゲートウェイやNATゲートウェイ経由でも実現できますが、[**コスト面でエンドポイントを使用した方がメリットが大きい**](https://qiita.com/c60evaporator/items/2f24d4796202e8b06a77#vpcとコスト)です。
-  >
-  > エンドポイントは大きく以下の2種類に分けられます
-  >
-  > - **インターフェイスエンドポイント** ：**AWSサービスにVPC内のIPアドレスが割り振られる**(仮想NICとして機能する)方式。見かけ上はVPC内での通信で完結しているように見えるため、**設定がシンプルで管理しやすい**が、アクセスに**料金が発生**する (下図の`Endpoint network interface`が相当)
-  >
-  > [![img](https://qiita-user-contents.imgix.net/https%3A%2F%2Fdocs.aws.amazon.com%2Fja_jp%2Fvpc%2Flatest%2Fprivatelink%2Fimages%2Fvpc-endpoint-kinesis-private-dns-diagram.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=f332b561babf80ec912ad4eb2e001e46)](https://camo.qiitausercontent.com/2de941be8051c62528c028849cb4662ce9869679/68747470733a2f2f646f63732e6177732e616d617a6f6e2e636f6d2f6a615f6a702f7670632f6c61746573742f707269766174656c696e6b2f696d616765732f7670632d656e64706f696e742d6b696e657369732d707269766174652d646e732d6469616772616d2e706e67)
-  >
-  > - **ゲートウェイエンドポイント** ：**グローバルIPを持ったAWSサービス**へのルーティング設定が追加される方式。VPC外の機器という扱いとなるため、ACL等の**設定がやや複雑**となるが、アクセスは**無料**。S3とDynamoDBのみ使用可能 (下図の`VPC endpoint`が相当)
-  >
-  > [![img](https://qiita-user-contents.imgix.net/https%3A%2F%2Fdocs.aws.amazon.com%2Fja_jp%2Fvpc%2Flatest%2Fprivatelink%2Fimages%2Fvpc-endpoint-s3-diagram.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=25ed54f74fd3e39832e685f6f897830b)](https://camo.qiitausercontent.com/f97f78247cf73092433a94b5f3897ef2129a8f44/68747470733a2f2f646f63732e6177732e616d617a6f6e2e636f6d2f6a615f6a702f7670632f6c61746573742f707269766174656c696e6b2f696d616765732f7670632d656e64706f696e742d73332d6469616772616d2e706e67)
-  >
-  > 図を見ると分かりますが、**接続先のAWSサービス**は**インターフェイスエンドポイントではVPC内のホスト**(サブネット内にIPアドレスが存在する)、**ゲートウェイエンドポイントではVPC外のホスト** (VPC外のグローバルIPアドレスが割り振られ、ルーター経由でルーティングされる)として認識されていることが分かります
   
   
   
