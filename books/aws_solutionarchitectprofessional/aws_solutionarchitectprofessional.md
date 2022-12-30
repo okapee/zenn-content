@@ -476,33 +476,6 @@ AWS側のVPCを多数接続する場合、Direct Connect GatewayやTransit Gatew
 
 
 
-#### Transit Gateway
-
-[こちら]()を参照。
-
-> Transit Gateway は中央※ハブを介して、 VPC とオンプレミスネットワークを接続するクラウドルーターだと言われています。
-> ネットワークが簡素化され、VPCの複雑なピアリング接続をしなくてよくなります。
->
-> [![2020-06-25_14h28_52.png](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F543340%2Fbd9404cb-2b63-4f50-d897-b304cba3e92c.png?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&s=1eb4ff8d3c4a0e58ec251727d22fdd4f)](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F543340%2Fbd9404cb-2b63-4f50-d897-b304cba3e92c.png?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&s=1eb4ff8d3c4a0e58ec251727d22fdd4f)
->
-> 中略
->
-> ![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F543340%2Fbd878bf4-dffd-37d3-9950-ac60eebe68dc.png?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&w=1400&fit=max&s=81b7125314e2bd03f68d1176d28c20ab)
-
-組織に新たなユーザーが加わりAWSアカウントを持っている場合、Resource ManagerでTransit Gatewayを共有する。
-
-参考)AWS Resource Access Managerを使用して、複数アカウントでAWS Transit Gatewayを共有して通信する方法 - サーバーワークスエンジニアブログ https://blog.serverworks.co.jp/ram-transit-gateway-routing
-
-##### Transit Gateway ピアアタッチメント
-
-別リージョンのTransit Gateway同士をつなぐもの
-
-##### Enable Acceleration
-
-Transit GatewayのVPN接続で**Enable Acceleration**を有効にすると、Global Acceleratorを使用したVPNネットワークの高速化になる。
-
-
-
 #### Transfer Family
 
 サービス概要は[こちら](https://qiita.com/sugimount-a/items/2d643d5435d5845cc815)を参考に。
