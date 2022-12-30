@@ -1709,27 +1709,6 @@ SCPとOUの概念はざっくり把握すること。以下がおすすめ。
 > - AWS CloudTrail のログや、Amazon S3 に保存される AWS Config のログの集中管理
 > - AWS IAM および AWS SSO を使用してクロスアカウントセキュリティ監査を有効化
 >
-> ## AWS Control Towerのメリットとユースケース
->
-> ### AWS Control Towerのメリット
->
-> AWS Control Tower のメリットは、マルチアカウントの統制を簡単かつ安全に行えることです。アカウントを複数管理する際に問題となるのが、アカウントの統制方法。設定をマルチアカウントに適用させようとすると、コストやセキュリティ面でさまざまな課題が生まれるため、エンジニアが頭を抱えることも多いです。
->
-> しかし、AWS Control Tower では AWS 環境の管理を自動化できます。手間を省いて簡単にアカウントを管理できることから、エンジニアの中で注目を集めています。
->
-> また、AWS Control Tower では「ガードレール（セキュリティ、オペレーション、コンプライアンス向けにパッケージ化されたガバナンスルール）」の設定により、違反行為の検出が可能です。これらの機能はアカウントの新規作成時や既存のアカウント変更時にも常に有効化されるため、設定変更等の面倒な手間なく利用することができます。
->
-> このように、AWS Control Tower は従来のマルチアカウント統制における課題を解決することができます。AWS Control Tower の使用によって、簡単かつ安全なマルチアカウント統制を実現できます。特にガードレールによる違反予防・検出はかなり強力なため、エンジニアからもリスク軽減に役立つとの声が上がっています。
->
-> ### AWS Control Tower のユースケース
->
-> - マルチアカウント環境の設定と管理
->
-> ベストプラクティスの設計図に基づき、マルチアカウント構造を設定します。
->
-> - 事前設定されたガードレールで大規模なガバナンス
->
-> 選別されたガバナンスルールを有効化します。セキュリティ、オペレーション、コンプライアンスに関するポリシーを、アカウントに適用することができます。
 
 
 
@@ -2177,24 +2156,6 @@ has been blocked by CORS policy: No ‘Access-Control-Allow-Origin’ header is 
 ### 節約
 
 [AWS公式動画](https://www.youtube.com/watch?v=kCokuedsX0g)がおすすめ。
-
-> ![スクリーンショット 2022-12-25 11.43.40](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.43.40.png)
->
-> ![スクリーンショット 2022-12-25 11.50.27](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.50.27.png)
->
-> ![スクリーンショット 2022-12-25 11.51.05](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.51.05.png)
->
-> ![スクリーンショット 2022-12-25 11.51.20](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.51.20.png)
->
-> ![スクリーンショット 2022-12-25 11.51.35](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.51.35.png)
->
-> ![スクリーンショット 2022-12-25 11.51.50](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.51.50.png)
->
-> ![スクリーンショット 2022-12-25 11.53.33](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.53.33.png)
->
-> ![スクリーンショット 2022-12-25 11.54.18](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.54.18.png)
->
-> ![スクリーンショット 2022-12-25 11.54.48](/Users/okazaki/Dropbox/typora/AWS Solution Architect Professional一発合格までの道のり.assets/スクリーンショット 2022-12-25 11.54.48.png)
 
 #### リザーブドインスタンス(RI)
 
