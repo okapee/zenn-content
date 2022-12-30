@@ -1624,24 +1624,6 @@ has been blocked by CORS policy: No ‘Access-Control-Allow-Origin’ header is 
 
 
 
-#### git-secrets
-
-[こちら](https://qiita.com/jqtype/items/9196e047eddb53d07a91)を参照。
-
-> A: gitのcommit/commit message等をスキャンし、その中に事前設定した秘密情報が含まれていたら、そのcommitをリジェクトします。
->
-> より正確には、
->
-> - `git commit`時にそのcommitの中に、
-> - 任意のタイミングで過去のgit historyの中に、
-> - あるいは任意のタイミングで任意のファイルの中に、
->
-> 事前設定された正規表現にマッチする情報が存在するか否かを検査します。awslabsが中心で開発しているだけあって、何よりもまず、AWSのcredentialの含まれたcommitを弾くのに非常に向いています。
-
-
-
-
-
 ### 節約
 
 [AWS公式動画](https://www.youtube.com/watch?v=kCokuedsX0g)がおすすめ。
@@ -1687,8 +1669,6 @@ has been blocked by CORS policy: No ‘Access-Control-Allow-Origin’ header is 
     - リクエストヘッダに上述の値が含まれない場合はリジェクトされる
 
 
-
-#### コスト分析
 
 ##### Budgets
 
@@ -1880,26 +1860,5 @@ SCTデータ抽出エージェントによる移行が必要。DMSだけでは�
 [こちら](https://atmarkit.itmedia.co.jp/ait/articles/1710/24/news053.html)を参照。
 
 > 一番の特徴は、「透過的」という名前の通り、**アプリケーションの書き換えを行わなくてもよい**ことです。暗号化／復号、暗号鍵の管理は全てユーザーやアプリケーションから透過的に行われます。
-
-
-
-### Amazon App Stream
-
-[こちら](https://dev.classmethod.jp/articles/re-introduction-2020-appstream2/)を参照。
-
-> > Amazon AppStream 2.0 は、完全マネージド型のアプリケーションストリーミングサービスです。
->
-> とある様にフルマネージドなアプリケーションストリーミングサービスです。
->
-> アプリケーションストリーミングが何かというと「アプリケーションの実体はリモート環境のサーバーで動作しているが、画面の描画をストリーミング転送してあたかもローカルでアプリケーションが動作している様に見せるアレ」です。
-> Windows Serverに標準搭載されているMicrosoft RemoteAppやCitrix社のCitrix Virtual Apps(旧称XenApp)などと同様のやつと言うほうがこれらの製品を知っている方にはわかりやすいかもしれません。
->
-> 完全マネージド型とある様にその基盤はAWSによって管理されユーザーはアプリケーションの利用に注力することができます。
->
-> ### Amazon WorkSpacesとの違い
->
-> AWS内の類似のサービスに[Amazon WorkSpaces](https://aws.amazon.com/jp/workspaces/)がありますが、Amazon WorkSpacesは「仮想デスクトップ」という形でユーザーに仮想マシン全体を公開するのに対し、AppStream 2.0は「アプリケーションストリーミング」という形で特定のアプリケーションのみを公開する違いがあります。
->
-> より詳細な両者の差異とそれぞれのユースケースについては以下の記事をご覧いただくとよいでしょう。
 
 
