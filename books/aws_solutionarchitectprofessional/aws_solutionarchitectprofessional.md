@@ -2,9 +2,9 @@
 
 title: "AWS Solution Architect Professionalに一発合格する方法"
 summary: "AWS Solution Architect Professionalに確実に一発合格する方法、教えます。"
-topics: ["AWS", "AWS Solution Architect Professional", "資格"] # トピック（5つまで）
-published: true # falseだと下書き
-price: 1000 # 有料の場合200〜5000
+topics: ["AWS", "AWS Solution Architect Professional", "資格"] 
+published: true
+price: 1000
 
 ---
 
@@ -271,12 +271,6 @@ price: 1000 # 有料の場合200〜5000
 #### VPCで起動しているEC2に対してトラフィックを調査し、特にUser-Agent確認する必要がある場合
 
 User-Agentなどのパケットの内容は**Flow Logsでは確認できない**。そのため、**VPCトラヒックミラーリング**を使用する。VPCトラヒックミラーリングの宛先はENIかNetwork Load Balancerを選択できる。CloudWatch Logsに送信することはできない。
-
-
-
-#### IPv6が必要な場合
-
-VPC新規作成時に設定することで使用できる。プライベートサブネットからはEgress-Onlyインターネットゲートウェイを使用することでアウトバウンド専用のネットワークを構築できる。Egress-OnlyインターネットゲートウェイはVPCにアタッチする。
 
 
 
